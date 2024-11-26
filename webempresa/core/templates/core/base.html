@@ -115,7 +115,11 @@
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            once: true, // Animar una sola vez
+            duration: 1000, // Duración de la animación
+            delay: 0, // Sin retraso global
+        });
     </script>
 </body>
 

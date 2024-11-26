@@ -6,23 +6,23 @@
 
 {% block content %}
     <!-- Cabecera -->
-    <section class="page-section clearfix">
+    <section class="page-section clearfix" data-aos="fade-up">
       <div class="container">
-        <div class="intro">
+        <div class="intro" data-aos="zoom-in" data-aos-delay="200">
           <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'core/img/intro2.jpg' %}" alt="">
-          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded" data-aos="fade-right" data-aos-delay="400">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">Ven a divertirte</span>
-              <span class="section-heading-lower">Te encantará</span>
+              <span class="section-heading-upper" data-aos="fade-down">Ven a divertirte</span>
+              <span class="section-heading-lower" data-aos="fade-up" data-aos-delay="600">Te encantará</span>
             </h2>
-            <p class="mb-3">En Tesis, cada noche se convierte en una experiencia inolvidable. Descubre el mejor ambiente, música en vivo y una selección exclusiva de bebidas que harán vibrar tus sentidos. Somos el epicentro de las noches en Villanueva de la Cañada, donde cada visita es el comienzo de una gran historia.</p>
-            <div class="intro-button mx-auto">
+            <p class="mb-3" data-aos="fade-in" data-aos-delay="800">
+              En Tesis, cada noche se convierte en una experiencia inolvidable. Descubre el mejor ambiente, música en vivo y una selección exclusiva de bebidas que harán vibrar tus sentidos. Somos el epicentro de las noches en Villanueva de la Cañada, donde cada visita es el comienzo de una gran historia.
+            </p>
+            <div class="intro-button mx-auto" data-aos="zoom-in" data-aos-delay="1000">
               <a class="btn btn-primary btn-xl" href="store.html">Visítanos</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-  
-    {% endblock %}
+{% endblock %}
