@@ -21,13 +21,41 @@
 
     <!-- Estilos -->
     <link href="{% static 'core/css/business-casual.css' %}?v=2" rel="stylesheet">
+
+    <style>
+        /* Parallax styles */
+        .parallax {
+            background-image: url('{% static "core/img/parallax-bg.jpg" %}');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .parallax h1 {
+            font-size: 4rem;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .content-section {
+            padding: 50px 15px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
-        <span class="site-heading-upper text-primary mb-3">Donde la Noche Empieza</span>
-        <span class="site-heading-lower">Tesis</span>
-    </h1>
+    <!-- Parallax Header -->
+    <div class="parallax">
+        <h1 class="site-heading text-center text-white">
+            <span class="site-heading-upper text-primary mb-3">Donde la Noche Empieza</span>
+            <span class="site-heading-lower">Tesis</span>
+        </h1>
+    </div>
 
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
@@ -61,12 +89,24 @@
         </div>
     </nav>
 
-    {% block content %} {% endblock %}
+    <!-- Contenido -->
+    <div class="container content-section">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Bienvenido a la experiencia única de Tesis</h2>
+                <p class="lead">Explora nuestros eventos, servicios y mucho más.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Parallax Footer -->
+    <div class="parallax">
+        <h2>¡Nos vemos en Tesis!</h2>
+    </div>
 
     <!-- Pié de página -->
     <footer class="footer text-faded text-center py-5">
         <div class="container">
-            <!-- Redes Sociales -->
             <p class="m-0">
                 {% if LINK_TWITTER %}
                 <a href="{{ LINK_TWITTER }}" class="link">
@@ -94,17 +134,13 @@
                 {% endif %}
             </p>
 
-            <!-- Enlaces de las páginas -->
             <p class="m-0 mbt">
-                {% load pages_extras %} 
-                {% get_page_list as page_list %} 
-                {% for page in page_list %} 
-                    <a href="{% url 'page' page.id page.title|slugify %}" 
-                class="link"> 
-                {{page.title}}</a> {% if not forloop.last %}·{% endif %}  
-                {% endfor %} 
+                {% get_page_list as page_list %}
+                {% for page in page_list %}
+                <a href="{% url 'page' page.id page.title|slugify %}" class="link">{{ page.title }}</a>
+                {% if not forloop.last %}·{% endif %}
+                {% endfor %}
             </p>
-
 
             <p class="m-0 mbt1">&copy; Tesis 1998</p>
         </div>
