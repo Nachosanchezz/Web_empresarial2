@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Inicio | Tesis{% endblock %}
+
+{% block content %}
+    <!-- Cabecera -->
+    <section class="page-section clearfix">
+      <div class="container">
+        <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'core/img/intro2.jpg' %}" alt="">
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Ven a divertirte</span>
+              <span class="section-heading-lower">Te encantará</span>
+            </h2>
+            <p class="mb-3">En Tesis, cada noche se convierte en una experiencia inolvidable. Descubre el mejor ambiente, música en vivo y una selección exclusiva de bebidas que harán vibrar tus sentidos. Somos el epicentro de las noches en Villanueva de la Cañada, donde cada visita es el comienzo de una gran historia.</p>
+            <div class="intro-button mx-auto">
+              <a class="btn btn-primary btn-xl" href="store.html">Visítanos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+    {% endblock %}
