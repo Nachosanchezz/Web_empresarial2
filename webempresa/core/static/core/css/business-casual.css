@@ -300,9 +300,3 @@ ul.errorlist{
   color: red;
 }
 
-.parallax {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
