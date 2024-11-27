@@ -19,8 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
 
     <!-- Estilos -->
     <link href="{% static 'core/css/business-casual.css' %}?v=2" rel="stylesheet">
@@ -33,7 +32,7 @@
     </h1>
 
     <!-- Navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav" data-aos="fade-in">
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
         <div class="container">
             <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'index' %}">Tesis</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,22 +40,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item px-lg-4 {% if request.path == '/' %}active{% endif %}" data-aos="zoom-in">
+                    <li class="nav-item px-lg-4 {% if request.path == '/' %}active{% endif %}">
                         <a class="nav-link text-uppercase text-expanded" href="{% url 'index' %}">Inicio</a>
                     </li>
-                    <li class="nav-item px-lg-4 {% if request.path == '/about/' %}active{% endif %}" data-aos="zoom-in" data-aos-delay="200">
+                    <li class="nav-item px-lg-4 {% if request.path == '/about/' %}active{% endif %}">
                         <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %}">Historia</a>
                     </li>
-                    <li class="nav-item px-lg-4 {% if request.path == '/services/' %}active{% endif %}" data-aos="zoom-in" data-aos-delay="400">
+                    <li class="nav-item px-lg-4 {% if request.path == '/services/' %}active{% endif %}">
                         <a class="nav-link text-uppercase text-expanded" href="{% url 'services' %}">Eventos</a>
                     </li>
-                    <li class="nav-item px-lg-4 {% if request.path == '/store/' %}active{% endif %}" data-aos="zoom-in" data-aos-delay="600">
+                    <li class="nav-item px-lg-4 {% if request.path == '/store/' %}active{% endif %}">
                         <a class="nav-link text-uppercase text-expanded" href="{% url 'store' %}">Contacto</a>
                     </li>
-                    <li class="nav-item px-lg-4 {% if request.path == '/contact/' %}active{% endif %}" data-aos="zoom-in" data-aos-delay="800">
+                    <li class="nav-item px-lg-4 {% if request.path == '/contact/' %}active{% endif %}">
                         <a class="nav-link text-uppercase text-expanded" href="{% url 'contact' %}">Entradas</a>
                     </li>
-                    <li class="nav-item px-lg-4 {% if request.path|slice:":6" == '/blog/' %}active{% endif %}" data-aos="zoom-in" data-aos-delay="1000">
+                    <li class="nav-item px-lg-4 {% if request.path|slice:":6" == '/blog/' %}active{% endif %}">
                         <a class="nav-link text-uppercase text-expanded" href="{% url 'blog' %}">Blog</a>
                     </li>
                 </ul>
@@ -99,7 +98,7 @@
             <p class="m-0 mbt">
                 {% get_page_list as page_list %}
                 {% for page in page_list %}
-                <a href="{% url 'page' page.id page.title|slugify %}" class="link" data-aos="fade-in" data-aos-delay="200">{{ page.title }}</a>
+                <a href="{% url 'page' page.id page.title|slugify %}" class="link">{{ page.title }}</a>
                 {% if not forloop.last %}·{% endif %}
                 {% endfor %}
             </p>
@@ -112,15 +111,7 @@
     <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true, // Animar una sola vez
-            duration: 1000, // Duración de la animación
-            delay: 0, // Sin retraso global
-        });
-    </script>
+
 </body>
 
 </html>
